@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <filter id="Filter_1379013615078">
+    <display-name id="DisplayName_1379013615079">HystrixRequestContextServletFilter</display-name>
+    <filter-name>HystrixRequestContextServletFilter</filter-name>
+    <filter-class>com.netflix.hystrix.contrib.requestservlet.HystrixRequestContextServletFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>HystrixRequestContextServletFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter id="Filter_1379013615093">
+    <display-name id="DisplayName_1379013615093">HystrixRequestLogViaResponseHeaderServletFilter</display-name>
+    <filter-name>HystrixRequestLogViaResponseHeaderServletFilter</filter-name>
+    <filter-class>com.netflix.hystrix.contrib.requestservlet.HystrixRequestLogViaResponseHeaderServletFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>HystrixRequestLogViaResponseHeaderServletFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet id="Servlet_1379013615062">
+    <description id="Description_1379013615078"></description>
+    <display-name id="DisplayName_1379013615078">HystrixMetricsStreamServlet</display-name>
+    <servlet-name>HystrixMetricsStreamServlet</servlet-name>
+    <servlet-class>com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet</servlet-class>
+  </servlet>
+  <servlet-mapping id="ServletMapping_1379013614875">
+    <servlet-name>HystrixMetricsStreamServlet</servlet-name>
+    <url-pattern>/hystrix.stream</url-pattern>
+  </servlet-mapping>
+  <filter id="Filter_1379013615094">
+    <display-name id="DisplayName_1379013615094">HystrixRequestFilter</display-name>
+    <filter-name>HystrixRequestFilter</filter-name>
+    <filter-class>br.com.strategiatec.netflixosshc.hystrix.filter.HystrixRequestFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>HystrixRequestFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet id="Servlet_1379013615078">
+    <servlet-name>Jersey REST Service</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <init-param id="ParamValue_1379013615078">
+      <param-name>com.sun.jersey.config.property.packages</param-name>
+      <param-value>br.com.strategiatec.netflixosshc.service</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping id="ServletMapping_1379013615031">
+    <servlet-name>Jersey REST Service</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
+</web-app>
