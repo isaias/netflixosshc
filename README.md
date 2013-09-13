@@ -25,18 +25,27 @@ SAP HANA Cloud Console Client
 
 
 Requesting deployment for:
+
    application           : netflixosshc
+   
    account               : s0004616922trial
+   
    source                : netflixosshc.war
+   
    elasticity data       : [1 .. 1]
+   
    severity              : error
+   
    host                  : https://hanatrial.ondemand.com
+   
    SDK version           : 2.14.26.2
+   
    user                  : s0004616922
 
 Password for your user: 
 
 [Thu Sep 12 22:16:36 BRT 2013] Deployment started...............
+
 [Thu Sep 12 22:17:15 BRT 2013] Deployment finished successfully
 
 
