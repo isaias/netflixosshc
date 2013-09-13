@@ -58,4 +58,8 @@ Example: http://netflixosshcs0004616922trial.hanatrial.ondemand.com/netflixosshc
 
 On the next image we have the Hystrix-Dashboard in action
 
-![Dashboard In Action](/images/dashboard-action.png) 
+![Dashboard In Action](/images/dashboard-action.png)
+
+Load Test
+============
+To make request for services you can use the script and data for Apache AB on 'ab' directory or use JMeter located at 'jmeter' directory
