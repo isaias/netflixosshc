@@ -52,6 +52,10 @@ Clone https://github.com/Netflix/Hystrix project, after follow this instructions
 
 After Dashboard is running put the address of hystrix.stream that was deployed on SAP HANA Cloud. 
 
-Example: http://netflixosshcs0004616922trial.hanatrial.ondemand.com/netflixosshc/hystrix.stream (It is without ssl)
+Example: http://netflixosshcs0004616922trial.hanatrial.ondemand.com/netflixosshc/hystrix.stream 
 
- 
+![Main Dashboard](/images/dashboard-main.png)
+
+On the next image we have the Hystrix-Dashboard in action
+
+![Dashboard In Action](/images/dashboard-action.png) 
